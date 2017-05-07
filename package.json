@@ -1,15 +1,16 @@
 {
-  "name": "expressdemo",
+  "name": "nodetestproj",
   "version": "1.0.0",
-  "description": "",
+  "description": "test",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Shubhangi",
+  "author": "Shubhangi Gupta",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.17.1",
     "express": "^4.15.2",
-    "request": "^2.81.0"
+    "mongodb": "^2.2.26"
   }
 }
