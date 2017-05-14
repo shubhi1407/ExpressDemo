@@ -31,10 +31,22 @@ router.post('/:id/report',function(req,res){
 
 })
 
+router.get('/:id/lastfourreport',function(req,res){
+  var machineId=req.params.id;
+    var collection = db.get().collection('Reports');
+    collection.find({machine_id:machineId}).sort({createdAt:1}).limit(4).toArray(function(err,docs){
+    if(err){
+      res.json(err);
+    }else{
+      res.json(docs);
+    }
+    });
+})
+
 router.get('/:id/questions',function(req,res){
   var machine_id = req.params.id;
   var collection = db.get().collection('Questions');
-  collection.find({"machine_id" : machine_id}).toArray(function(err,docs){
+  collection.find().toArray(function(err,docs){
     res.json({response:docs});
   })
 })
